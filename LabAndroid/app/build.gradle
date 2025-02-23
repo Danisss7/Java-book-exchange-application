@@ -1,0 +1,50 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.example.labandroid'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.labandroid"
+        minSdk 30
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.activity
+    implementation libs.constraintlayout
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation libs.gson
+
+//    implementation libs.gson
+//    implementation libs.lombok
+//    runtimeOnly libs.mysql.connector.j
+//    runtimeOnly libs.mariadb.java.client
+//    annotationProcessor libs.projectlombok.lombok
+//    testImplementation libs.spring.boot.starter.test
+//    testRuntimeOnly libs.junit.platform.launcher
+}

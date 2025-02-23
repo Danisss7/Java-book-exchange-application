@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">LabAndroid</string>
+    <string name="login_button_text">Log in</string>
+    <string name="log_in_button_txt">Log in</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+        <string-array name="genre_values">
+            <item>SCI_FI</item>
+            <item>HORROR</item>
+            <item>ADVENTURE</item>
+            <item>FICTION</item>
+            <item>NON_FICTION</item>
+            <item>FANTASY</item>
+            <item>MYSTERY</item>
+            <item>ROMANCE</item>
+            <item>THRILLER</item>
+            <item>HISTORICAL</item>
+            <item>BIOGRAPHY</item>
+            <item>POETRY</item>
+            <item>CLASSIC</item>
+            <item>COMIC</item>
+            <item>DRAMA</item>
+            <item>ACTION</item>
+            <item>CRIME</item>
+            <item>DYSTOPIAN</item>
+            <item>CHILDRENS</item>
+            <item>YOUNG_ADULT</item>
+        </string-array>
+        <string-array name="language_values">
+            <item>ENGLISH</item>
+            <item>LITHUANIAN</item>
+        </string-array>
+        <string-array name="format_values">
+            <item>HARDCOVER</item>
+            <item>EBOOK</item>
+        </string-array>
+</resources>
