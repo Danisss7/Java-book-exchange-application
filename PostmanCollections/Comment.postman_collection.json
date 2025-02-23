@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "85e8400f-ea59-486a-a7e3-728f62f1a94f",
+		"name": "Comment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40211050"
+	},
+	"item": [
+		{
+			"name": "createComment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Great Discussion\",\r\n  \"body\": \"This is a comment on an interesting topic.\",\r\n  \"client\": {\r\n    \"id\": 1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments/createComment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"createComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateComment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Great Discussion\",\r\n  \"body\": \"This is a comment on an interesting topic.\",\r\n  \"client\": {\r\n    \"id\": 1\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments/validateComment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"validateComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllComments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comments/allComments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"allComments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findCommentsByChat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comments/findByChat/{chatId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"findByChat",
+						"{chatId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findCommentsByClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comments/findByClient/{clientId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"findByClient",
+						"{clientId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCommentByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comments/comment/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"comment",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLatestComment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Updated Comment Title\",\r\n  \"body\": \"Updated body of the comment\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/comments/updateLatestComment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"updateLatestComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLatestComment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/comments/deleteLatestComment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"comments",
+						"deleteLatestComment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

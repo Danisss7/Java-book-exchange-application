@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "7b801828-8c8b-4f5b-82c7-01a9ff8e4ac5",
+		"name": "Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40211050"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"login\": \"john_doe\",\n  \"password\": \"password123\",\n  \"name\": \"John\",\n  \"surname\": \"Doe\",\n  \"address\": \"123 Main St, Springfield, IL\",\n  \"birthDate\": \"1990-01-01\",\n  \"clientBio\": \"A brief bio about John.\",\n  \"email\": \"john.doe@example.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/createClient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"createClient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"john_doe\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/validateClient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"validateClient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllClients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/allClients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"allClients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLatestClient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"New Address\",\r\n    \"birthDate\": \"1990-01-01\",\r\n    \"clientBio\": \"Updated bio about the client\",\r\n    \"name\": \"Updated Name\",\r\n    \"surname\": \"Updated Surname\",\r\n    \"login\": \"updatedLogin\",\r\n    \"password\": \"updatedPassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/updateLatestUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateLatestUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUserByID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/deleteUser/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteUser",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLatestClient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/deleteLatestClient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleteLatestClient"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

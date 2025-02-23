@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "515cfd59-c98d-4bb3-9367-9b742b6ba472",
+		"name": "Manga",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40211050"
+	},
+	"item": [
+		{
+			"name": "createManga",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mangas/createManga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mangas",
+						"createManga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllMangas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mangas/allMangas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mangas",
+						"allMangas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMangaByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mangas/manga/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mangas",
+						"manga",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLatestManga",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Updated Manga Title\",\r\n    \"author\": \"Updated Author\",\r\n    \"illustrator\": \"Updated Illustrator\",\r\n    \"originalLanguage\": \"Japanese\",\r\n    \"volumeNumber\": 25,\r\n    \"demographic\": \"SEINEN\",\r\n    \"isColor\": true,\r\n    \"owner\": {\r\n        \"id\": 1\r\n    },\r\n    \"client\": {\r\n        \"id\": 2\r\n    },\r\n    \"records\": [],\r\n    \"publicationStatus\": \"AVAILABLE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mangas/updateLatestManga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mangas",
+						"updateLatestManga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMangaByID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mangas/deleteManga/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mangas",
+						"deleteManga",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLatestManga",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mangas/deleteLatestManga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mangas",
+						"deleteLatestManga"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

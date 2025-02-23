@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "bddeef74-d146-46f4-b4ab-ec3c76e83605",
+		"name": "Periodical",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40211050"
+	},
+	"item": [
+		{
+			"name": "createPeriodical",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/periodicals/createPeriodical",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"periodicals",
+						"createPeriodical"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allPeriodicals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/periodicals/allPeriodicals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"periodicals",
+						"allPeriodicals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPeriodicalByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/periodicals/periodical/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"periodicals",
+						"periodical",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByFrequency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/periodicals/findByFrequency/{frequency}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"periodicals",
+						"findByFrequency",
+						"{frequency}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByPublicationDate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/periodicals/findByPublicationDate/{publicationDate}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"periodicals",
+						"findByPublicationDate",
+						"{publicationDate}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLatestPeriodical",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Updated Title\",\r\n  \"publisher\": \"Updated Publisher\",\r\n  \"frequency\": \"WEEKLY\",\r\n  \"publicationDate\": \"2024-12-06\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/periodicals/updateLatestPeriodical",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"periodicals",
+						"updateLatestPeriodical"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePeriodicalByID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/periodicals/deletePeriodical/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"periodicals",
+						"deletePeriodical",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLatestPeriodical",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/periodicals/deleteLatestPeriodical",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"periodicals",
+						"deleteLatestPeriodical"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

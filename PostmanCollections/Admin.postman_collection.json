@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "e356fb63-ea07-4799-bdc0-c5369d7b519c",
+		"name": "Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40211050"
+	},
+	"item": [
+		{
+			"name": "createAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"adminLogin\",\r\n  \"password\": \"adminPassword\",\r\n  \"name\": \"AdminFirstName\",\r\n  \"surname\": \"AdminLastName\",\r\n  \"phoneNum\": \"123456789\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admins/createAdmin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admins",
+						"createAdmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateAdmin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"adminLogin\",\r\n  \"password\": \"adminPassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admins/validateAdmin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admins",
+						"validateAdmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allAdmins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admins/allAdmins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admins",
+						"allAdmins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAdminByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admins/admin/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admins",
+						"admin",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateLatestAdmin",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"newAdminLogin\",\r\n  \"password\": \"newAdminPassword\",\r\n  \"name\": \"UpdatedFirstName\",\r\n  \"surname\": \"UpdatedLastName\",\r\n  \"phoneNum\": \"987654321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/admins/updateLatestAdmin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admins",
+						"updateLatestAdmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLatestAdmin",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/admins/deleteLatestAdmin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"admins",
+						"deleteLatestAdmin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "6d3e3ebe-c2ac-4fb6-a5a8-524e30dd9a44",
+		"name": "Books",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40211050"
+	},
+	"item": [
+		{
+			"name": "createBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Catcher in the Rye\",\r\n  \"author\": \"J.D. Salinger\",\r\n  \"publisher\": \"Little, Brown and Company\",\r\n  \"isbn\": \"978-0-316-76948-0\",\r\n  \"genre\": \"FICTION\",\r\n  \"pageCount\": 277,\r\n  \"language\": \"ENGLISH\",\r\n  \"publicationYear\": 1951,\r\n  \"format\": \"HARDCOVER\",\r\n  \"summary\": \"A story about a teenage boy, Holden Caulfield, who is struggling with growing up.\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/createBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"createBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getLatestBook",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/latestBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"latestBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBookByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/book/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"book",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findBooksByGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/findByGenre/FICTION",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"findByGenre",
+						"FICTION"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/allBooks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"allBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"new title\",\r\n  \"author\": \"new author\",\r\n  \"publisher\": \"test\",\r\n  \"isbn\": null,\r\n  \"genre\": null,\r\n  \"pageCount\": 0,\r\n  \"language\": null,\r\n  \"publicationYear\": 0,\r\n  \"format\": null,\r\n  \"summary\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books/updateBook/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"updateBook",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteLatestBook",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/deleteLatestBook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"deleteLatestBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allAvailableBooksByOwnerID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/allAvailableBooks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"allAvailableBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getBooksByOwnerID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/byOwner/{ownerId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"byOwner",
+						"{ownerId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBookByID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/deleteBook/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"deleteBook",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBookByOwnerID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/createBookByOwnerID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"createBookByOwnerID"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "setBookToTaken",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/reserveBook/{bookId}/{clientId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"reserveBook",
+						"{bookId}",
+						"{clientId}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAvailableBooksNotOwnerID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "unreserveBook",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/unreserveBook/{bookId}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"unreserveBook",
+						"{bookId}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

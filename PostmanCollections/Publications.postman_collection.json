@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "4ae027bc-cb33-4d63-ab06-52b96e98437b",
+		"name": "Publications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40211050"
+	},
+	"item": [
+		{
+			"name": "allAvailablePublications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/publications/allAvailablePublications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"publications",
+						"allAvailablePublications"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
