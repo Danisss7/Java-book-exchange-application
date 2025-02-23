@@ -1,0 +1,76 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="demo:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/demo_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="demo/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="demo" />
+          <element id="jpa-descriptors" facet="demo/jpa/JPA" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.hibernate.orm:hibernate-core:6.6.1.Final" />
+          <element id="library" level="project" name="Maven: jakarta.persistence:jakarta.persistence-api:3.1.0" />
+          <element id="library" level="project" name="Maven: jakarta.transaction:jakarta.transaction-api:2.0.1" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.5.0.Final" />
+          <element id="library" level="project" name="Maven: io.smallrye:jandex:3.2.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.5.1" />
+          <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.14.18" />
+          <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:4.0.0" />
+          <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:2.1.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:4.0.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-core:4.0.2" />
+          <element id="library" level="project" name="Maven: org.eclipse.angus:angus-activation:2.0.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.jaxb:txw2:4.0.2" />
+          <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:4.1.1" />
+          <element id="library" level="project" name="Maven: jakarta.inject:jakarta.inject-api:2.0.1" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr4-runtime:4.13.0" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:mac:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:mac:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-base:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-base:mac:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:mac:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-web:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-web:mac:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-swing:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-swing:mac:17.0.6" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-media:21.0.2" />
+          <element id="library" level="project" name="Maven: org.openjfx:javafx-media:mac:21.0.2" />
+          <element id="library" level="project" name="Maven: org.controlsfx:controlsfx:11.2.1" />
+          <element id="library" level="project" name="Maven: com.dlsc.formsfx:formsfx-core:11.6.0" />
+          <element id="library" level="project" name="Maven: net.synedra:validatorfx:0.5.0" />
+          <element id="library" level="project" name="Maven: org.kordamp.ikonli:ikonli-javafx:12.3.1" />
+          <element id="library" level="project" name="Maven: org.kordamp.ikonli:ikonli-core:12.3.1" />
+          <element id="library" level="project" name="Maven: org.kordamp.bootstrapfx:bootstrapfx-core:0.4.0" />
+          <element id="library" level="project" name="Maven: eu.hansolo:tilesfx:21.0.3" />
+          <element id="library" level="project" name="Maven: eu.hansolo.fx:countries:21.0.3" />
+          <element id="library" level="project" name="Maven: eu.hansolo.fx:heatmap:21.0.3" />
+          <element id="library" level="project" name="Maven: eu.hansolo:toolboxfx:21.0.3" />
+          <element id="library" level="project" name="Maven: eu.hansolo:toolbox:21.0.5" />
+          <element id="library" level="project" name="Maven: com.github.almasb:fxgl:17.3" />
+          <element id="library" level="project" name="Maven: com.github.almasb:fxgl-core:17.3" />
+          <element id="library" level="project" name="Maven: com.gluonhq.attach:audio:4.0.17" />
+          <element id="library" level="project" name="Maven: com.github.almasb:fxgl-io:17.3" />
+          <element id="library" level="project" name="Maven: com.gluonhq.attach:storage:4.0.17" />
+          <element id="library" level="project" name="Maven: com.gluonhq.attach:util:4.0.17" />
+          <element id="library" level="project" name="Maven: com.github.almasb:fxgl-entity:17.3" />
+          <element id="library" level="project" name="Maven: com.github.almasb:fxgl-scene:17.3" />
+          <element id="library" level="project" name="Maven: com.github.almasb:fxgl-gameplay:17.3" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.14.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.14.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.14.2" />
+          <element id="library" level="project" name="Maven: com.gluonhq.attach:lifecycle:4.0.17" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.8.10" />
+          <element id="library" level="project" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10" />
+          <element id="library" level="project" name="Maven: com.mysql:mysql-connector-j:8.0.33" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.21.9" />
+          <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:7.0.1.Final" />
+          <element id="library" level="project" name="Maven: org.jetbrains:annotations:13.0" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

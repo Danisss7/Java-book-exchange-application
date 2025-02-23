@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="549.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controllers.PublicationsWindow">
+   <children>
+      <MenuBar layoutY="4.0" prefHeight="28.0" prefWidth="721.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <TabPane layoutY="31.0" prefHeight="519.0" prefWidth="721.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Manga">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="mangaListView" layoutX="26.0" layoutY="33.0" onMouseClicked="#getSelectedManga" prefHeight="431.0" prefWidth="224.0" />
+                        <TextField fx:id="mangaAuthorNameField" layoutX="300.0" layoutY="85.0" />
+                        <TextField fx:id="mangaTitleField" layoutX="300.0" layoutY="145.0" />
+                        <Text layoutX="300.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" wrappingWidth="72.31884765625" />
+                        <Text layoutX="300.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+                        <Text layoutX="26.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manga Publications" wrappingWidth="121.31884765625" />
+                        <Text layoutX="300.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Illustrator" wrappingWidth="72.31884765625" />
+                        <TextField fx:id="mangaIllustratorField" layoutX="300.0" layoutY="205.0" />
+                        <Text layoutX="300.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language" />
+                        <TextField fx:id="mangaLanguageField" layoutX="300.0" layoutY="265.0" />
+                        <Text layoutX="300.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Volume" wrappingWidth="72.31884765625" />
+                        <TextField fx:id="mangaVolumeField" layoutX="300.0" layoutY="325.0" />
+                        <ComboBox fx:id="mangaDemographicDropdown" layoutX="300.0" layoutY="385.0" onAction="#mangaDemographicSelected" prefHeight="26.0" prefWidth="164.0" promptText="Select a demographic" />
+                        <CheckBox fx:id="mangaIsColored" layoutX="300.0" layoutY="445.0" mnemonicParsing="false" text="Colored" />
+                        <Text layoutX="300.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Demographic" wrappingWidth="91.31884765625" />
+                        <Button layoutX="521.0" layoutY="86.0" mnemonicParsing="false" onAction="#createManga" text="Create" />
+                        <Button layoutX="521.0" layoutY="146.0" mnemonicParsing="false" onAction="#updateManga" text="Update" />
+                        <Button layoutX="521.0" layoutY="206.0" mnemonicParsing="false" onAction="#deleteManga" text="Delete" />
+                        <Button layoutX="523.0" layoutY="266.0" mnemonicParsing="false" onAction="#clearMangaFields" text="Clear" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Periodical">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="periodicalListView" layoutX="30.0" layoutY="32.0" onMouseClicked="#getSelectedPeriodical" prefHeight="428.0" prefWidth="228.0" />
+                        <TextField fx:id="periodicalAuthorNameField" layoutX="300.0" layoutY="78.0" prefHeight="26.0" prefWidth="177.0" promptText="Search" />
+                        <Text layoutX="300.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" />
+                        <Text layoutX="300.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+                        <TextField fx:id="periodicalTitleField" layoutX="300.0" layoutY="128.0" prefHeight="26.0" prefWidth="177.0" promptText="Search" />
+                        <Text layoutX="300.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Issue Number" />
+                        <TextField fx:id="periodicalIssueField" layoutX="300.0" layoutY="228.0" prefHeight="26.0" prefWidth="177.0" promptText="Search" />
+                        <Text layoutX="300.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editor" />
+                        <TextField fx:id="periodicalEditorField" layoutX="300.0" layoutY="278.0" prefHeight="26.0" prefWidth="177.0" promptText="Search" />
+                        <Text layoutX="300.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency" />
+                        <TextField fx:id="periodicalPublisherField" layoutX="300.0" layoutY="378.0" prefHeight="26.0" prefWidth="177.0" promptText="Search" />
+                        <Text layoutX="300.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publisher" />
+                        <ComboBox fx:id="periodicalFrequencyDropdown" layoutX="300.0" layoutY="328.0" prefWidth="150.0" />
+                        <Text layoutX="300.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publication Date" />
+                        <DatePicker fx:id="periodicalDateField" layoutX="300.0" layoutY="178.0" />
+                        <Text layoutX="30.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Periodical Publications" />
+                        <Button layoutX="548.0" layoutY="79.0" mnemonicParsing="false" onAction="#createPeriodical" text="Create" />
+                        <Button layoutX="548.0" layoutY="128.0" mnemonicParsing="false" onAction="#updatePeriodical" text="Update" />
+                        <Button layoutX="548.0" layoutY="178.0" mnemonicParsing="false" onAction="#deletePeriodical" text="Delete" />
+                        <Button layoutX="548.0" layoutY="228.0" mnemonicParsing="false" onAction="#clearPeriodicalButton" text="Clear" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Books">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="488.0" prefWidth="682.0">
+                     <children>
+                        <ListView fx:id="bookListView" layoutX="31.0" layoutY="32.0" onMouseClicked="#getSelectedBook" prefHeight="433.0" prefWidth="228.0" />
+                        <Text layoutX="31.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Publications" wrappingWidth="152.21630859375" />
+                        <TextField fx:id="bookAuthorField" layoutX="300.0" layoutY="85.0" />
+                        <Text layoutX="300.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" />
+                        <Text layoutX="302.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+                        <TextField fx:id="bookTitleField" layoutX="300.0" layoutY="135.0" />
+                        <Text layoutX="300.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publisher" />
+                        <TextField fx:id="bookPublisherField" layoutX="300.0" layoutY="185.0" />
+                        <Text layoutX="300.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN" />
+                        <TextField fx:id="bookISBNField" layoutX="300.0" layoutY="235.0" />
+                        <ComboBox fx:id="bookGenreDropdown" layoutX="300.0" layoutY="285.0" prefWidth="150.0" />
+                        <Text layoutX="298.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" />
+                        <Text layoutX="300.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page Count" />
+                        <TextField fx:id="bookPageCountField" layoutX="300.0" layoutY="335.0" />
+                        <Text layoutX="301.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Langugage" />
+                        <ComboBox fx:id="bookLanguageDropdown" layoutX="300.0" layoutY="385.0" prefWidth="150.0" />
+                        <Text layoutX="300.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publication Year" />
+                        <TextField fx:id="bookPublicationYearField" layoutX="295.0" layoutY="435.0" />
+                        <Text layoutX="490.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Format" />
+                        <ComboBox fx:id="bookFormatDropdown" layoutX="490.0" layoutY="85.0" prefWidth="150.0" />
+                        <TextArea fx:id="bookDescriptionField" layoutX="490.0" layoutY="135.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Text layoutX="490.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+                        <Button layoutX="494.0" layoutY="349.0" mnemonicParsing="false" onAction="#createBook" text="Create" />
+                        <Button layoutX="494.0" layoutY="393.0" mnemonicParsing="false" onAction="#updateBook" text="Update" />
+                        <Button layoutX="613.0" layoutY="349.0" mnemonicParsing="false" onAction="#deleteBook" text="Delete" />
+                        <Button layoutX="613.0" layoutY="394.0" mnemonicParsing="false" onAction="#clearBookButton" text="Clear" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

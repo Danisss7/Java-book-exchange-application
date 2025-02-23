@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="336.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controllers.CommentWindow">
+    <children>
+        <MenuBar prefHeight="28.0" prefWidth="600.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <ListView fx:id="commentListField" layoutX="15.0" layoutY="45.0" onMouseClicked="#fillCommentFields" prefHeight="280.0" prefWidth="200.0" />
+        <TextField fx:id="titleField" layoutX="235.0" layoutY="45.0" />
+        <TextField fx:id="bodyField" layoutX="235.0" layoutY="95.0" />
+        <Text layoutX="235.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+        <Text layoutX="235.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Body" />
+        <Text layoutX="235.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Timestamp" />
+        <DatePicker fx:id="timestampField" layoutX="235.0" layoutY="145.0" />
+        <Text layoutX="235.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat ID" />
+        <Text layoutX="235.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parent comment" />
+        <Text layoutX="235.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client" />
+        <Text layoutX="15.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Comment list" />
+        <Button layoutX="466.0" layoutY="46.0" mnemonicParsing="false" onAction="#createComment" text="Create" />
+        <Button layoutX="464.0" layoutY="95.0" mnemonicParsing="false" onAction="#updateComment" text="Update" />
+        <Button layoutX="467.0" layoutY="145.0" mnemonicParsing="false" onAction="#deleteComment" text="Delete" />
+        <Button layoutX="470.0" layoutY="195.0" mnemonicParsing="false" onAction="#clearCommentFields" text="Clear" />
+      <ComboBox fx:id="parentField" layoutX="235.0" layoutY="245.0" prefWidth="150.0" />
+      <ComboBox fx:id="clientField" layoutX="235.0" layoutY="295.0" prefWidth="150.0" />
+      <ComboBox fx:id="chatField" layoutX="235.0" layoutY="196.0" prefWidth="150.0" />
+    </children>
+</AnchorPane>

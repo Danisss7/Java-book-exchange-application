@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="428.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controllers.Main">
+   <children>
+      <TabPane fx:id="allTabs" prefHeight="464.0" prefWidth="681.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+            <Tab fx:id="bookExchangeTab" onSelectionChanged="#loadData" text="Book Exchange">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="availableBookList" layoutX="26.0" layoutY="62.0" onMouseClicked="#loadPublicationInfo" prefHeight="332.0" prefWidth="169.0" />
+                        <Text layoutX="32.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publications" />
+                        <Button fx:id="leaveReviewButton" layoutX="242.0" layoutY="248.0" mnemonicParsing="false" onAction="#loadReviewWindow" text="Leave Review On User" />
+                        <Label fx:id="ownerInfo" layoutX="434.0" layoutY="45.0" text="Owner info:" />
+                        <Button fx:id="addMessageButton" layoutX="241.0" layoutY="308.0" mnemonicParsing="false" onAction="#chatWithOwner" text="Chat with owner" />
+                        <TextArea fx:id="aboutBook" layoutX="434.0" layoutY="295.0" prefHeight="109.0" prefWidth="200.0" />
+                        <TextArea fx:id="ownerBio" layoutX="434.0" layoutY="62.0" prefHeight="193.0" prefWidth="200.0" />
+                        <Button fx:id="publicationActionButton" layoutX="241.0" layoutY="338.0" mnemonicParsing="false" onAction="#reserveBook" text="Reserve Book" />
+                        <ComboBox fx:id="borrowedBookStatusCombobox" layoutX="26.0" layoutY="32.0" onAction="#loadBorrowedBooksByStatus" prefWidth="150.0" promptText="select status" />
+                        <Button fx:id="buyBookButton" layoutX="241.0" layoutY="368.0" mnemonicParsing="false" onAction="#buyAvailableBook" text="Buy book" />
+                        <Button layoutX="241.0" layoutY="278.0" mnemonicParsing="false" onAction="#loadReviewOnBookWindow" text="Leave Review On Book" />
+                        <Label layoutX="434.0" layoutY="280.0" text="Book summary" />
+                        <Text layoutX="229.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filters" />
+                        <ComboBox fx:id="typeFilterMain" layoutX="235.0" layoutY="61.0" onAction="#selectedTypeFilterInMain" prefHeight="26.0" prefWidth="174.0" promptText="Select a filter" />
+                        <Text layoutX="236.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Publication type" />
+                        <Text layoutX="235.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By format" />
+                        <ComboBox fx:id="formatFilterMain" layoutX="234.0" layoutY="101.0" onAction="#selectedFormatFilterInMain" prefHeight="26.0" prefWidth="176.0" promptText="Select a filter" />
+                        <Text layoutX="235.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Genre" />
+                        <ComboBox fx:id="genreFilterMain" layoutX="235.0" layoutY="145.0" onAction="#selectedGenreFilterInMain" prefHeight="26.0" prefWidth="176.0" promptText="Select a filter" />
+                        <Text layoutX="234.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Language" />
+                        <ComboBox fx:id="languageFilterMain" layoutX="235.0" layoutY="188.0" onAction="#selectedLanguageFilterInMain" prefHeight="26.0" prefWidth="175.0" promptText="Select a filter" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab fx:id="userManagementTab" onSelectionChanged="#loadData" text="Users">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="510.0">
+                     <children>
+                        <ListView fx:id="allUsersListView" layoutX="14.0" layoutY="27.0" onMouseClicked="#loadSelectedUser" prefHeight="303.0" prefWidth="200.0" />
+                        <Button layoutX="262.0" layoutY="298.0" mnemonicParsing="false" onAction="#createNewUser" text="Add" />
+                        <Button layoutX="336.0" layoutY="298.0" mnemonicParsing="false" onAction="#updateSelectedUser" text="Update" />
+                        <Button layoutX="505.0" layoutY="298.0" mnemonicParsing="false" onAction="#deleteSelectedUser" text="Delete" />
+                        <TextField fx:id="loginField" layoutX="231.0" layoutY="27.0" />
+                        <TextField fx:id="nameField" layoutX="231.0" layoutY="135.0" />
+                        <TextField fx:id="surnameField" layoutX="231.0" layoutY="186.0" />
+                        <DatePicker fx:id="birthDate" layoutX="232.0" layoutY="234.0" prefHeight="25.0" prefWidth="155.0" />
+                        <TextField fx:id="addressField" layoutX="407.0" layoutY="27.0" />
+                        <TextField fx:id="phoneNumField" layoutX="407.0" layoutY="81.0" />
+                        <RadioButton fx:id="clientRadio" layoutX="414.0" layoutY="122.0" mnemonicParsing="false" onMouseClicked="#clientRadioClick" selected="true" text="Client">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="userType" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="adminRadio" layoutX="414.0" layoutY="156.0" mnemonicParsing="false" onMouseClicked="#adminRadioClick" text="Admin" toggleGroup="$userType" />
+                        <PasswordField fx:id="passwordField" layoutX="231.0" layoutY="81.0" />
+                        <Button layoutX="420.0" layoutY="298.0" mnemonicParsing="false" onAction="#clearFields" text="Clear" />
+                        <Text layoutX="231.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+                        <Text layoutX="231.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+                        <Text layoutX="229.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birth Date" />
+                        <Text layoutX="232.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname" />
+                        <Text layoutX="231.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text layoutX="405.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+                        <Text layoutX="405.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+                        <Text layoutX="14.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User List" />
+                        <Button layoutX="17.0" layoutY="356.0" mnemonicParsing="false" onAction="#goToPublications" text="Go To Publications" />
+                        <Button layoutX="171.0" layoutY="356.0" mnemonicParsing="false" onAction="#goToAllComments" text="View All Comments" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="activityOverviewTab" onSelectionChanged="#loadData" text="Activity Overview">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="409.0" prefWidth="600.0">
+                     <children>
+                        <ComboBox fx:id="publicationFilterSelect" layoutX="54.0" layoutY="53.0" onAction="#selectedPublicationTypeFilter" prefHeight="25.0" prefWidth="199.0" promptText="Select a filter" />
+                        <Text layoutX="54.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Publication type" />
+                        <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filters" />
+                        <Text layoutX="56.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Date" />
+                        <Text layoutX="56.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From" />
+                        <Text layoutX="56.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By format" />
+                        <ComboBox fx:id="formatTypeFilter" layoutX="54.0" layoutY="316.0" prefHeight="25.0" prefWidth="199.0" promptText="Select a filter" />
+                        <Text layoutX="56.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Genre" />
+                        <ComboBox fx:id="genreFilterSelect" layoutX="54.0" layoutY="230.0" prefHeight="25.0" prefWidth="199.0" promptText="Select a filter" />
+                        <Text layoutX="56.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By Language" />
+                        <ComboBox fx:id="languageFilterSelect" layoutX="54.0" layoutY="273.0" prefHeight="25.0" prefWidth="199.0" promptText="Select a filter" />
+                        <TextField fx:id="borrowedCountField" layoutX="280.0" layoutY="283.0" />
+                        <ListView fx:id="overviewPublicationList" layoutX="280.0" layoutY="52.0" prefHeight="200.0" prefWidth="379.0" />
+                        <Text layoutX="305.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrowed Count" />
+                        <Text layoutX="280.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publication List" />
+                        <Button layoutX="112.0" layoutY="357.0" mnemonicParsing="false" onAction="#calculateOverview" text="Calculate" />
+                        <RadioButton fx:id="formatRadialButton" layoutX="14.0" layoutY="306.0" mnemonicParsing="false" onAction="#formatRadialClick" />
+                        <RadioButton fx:id="publicationRadialButton" layoutX="14.0" layoutY="35.0" mnemonicParsing="false" onAction="#publicationRadialClick" />
+                        <RadioButton fx:id="dateRadialButton" layoutX="14.0" layoutY="93.0" mnemonicParsing="false" onAction="#dateRadialClick" />
+                        <RadioButton fx:id="genreRadialButton" layoutX="14.0" layoutY="213.0" mnemonicParsing="false" onAction="#genreRadialClick" />
+                        <RadioButton fx:id="languageRadialButton" layoutX="14.0" layoutY="255.0" mnemonicParsing="false" onAction="#languageRadialClick" />
+                        <DatePicker fx:id="fromFilterSelect" layoutX="54.0" layoutY="127.0" />
+                        <Text layoutX="56.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To" />
+                        <DatePicker fx:id="toFilterSelect" layoutX="54.0" layoutY="179.0" />
+                        <TextField fx:id="soldCountField" layoutX="280.0" layoutY="341.0" />
+                        <Text layoutX="312.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bought Count" />
+                        <TextField fx:id="borrowedToCountField" layoutX="499.0" layoutY="284.0" />
+                        <Text layoutX="505.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Borrowed To Others Count" />
+                        <TextField fx:id="soldToCountField" layoutX="499.0" layoutY="342.0" />
+                        <Text layoutX="548.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sold Count" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="alternativeUserManagementTab" onSelectionChanged="#loadData" text="Alternative User Management">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="494.0" prefWidth="670.0">
+                     <children>
+                        <TableView fx:id="userTable" prefHeight="436.0" prefWidth="681.0">
+                          <columns>
+                            <TableColumn fx:id="cold" prefWidth="75.0" text="Id" />
+                            <TableColumn fx:id="colLogin" prefWidth="75.0" text="Username" />
+                              <TableColumn fx:id="colPassword" prefWidth="75.0" text="Password" />
+                              <TableColumn fx:id="colName" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="colSurname" prefWidth="75.0" text="Surname" />
+                              <TableColumn fx:id="colAddress" prefWidth="68.0" text="Address" />
+                              <TableColumn fx:id="colBirthDate" prefWidth="69.0" text="Birthdate" />
+                              <TableColumn fx:id="colPhoneNumber" prefWidth="88.0" text="Phone number" />
+                              <TableColumn fx:id="dummyCol" prefWidth="75.0" text="Action" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="clientBookManagementTab" onSelectionChanged="#loadData" text="My Books">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="bookTable" layoutY="28.0" prefHeight="408.0" prefWidth="681.0">
+                          <columns>
+                            <TableColumn fx:id="colId" prefWidth="54.0" text="Id" />
+                            <TableColumn fx:id="colTitle" prefWidth="188.0" text="Title" />
+                              <TableColumn fx:id="colUser" prefWidth="157.0" text="User" />
+                              <TableColumn fx:id="colStatus" prefWidth="138.0" text="Status" />
+                              <TableColumn fx:id="colRequestDate" prefWidth="143.0" text="Request date" />
+                          </columns>
+                        </TableView>
+                        <Button layoutY="1.0" mnemonicParsing="false" onAction="#openPublicationSubmissionWindow" text="Manage Publications" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="clientActivityHistory" onSelectionChanged="#loadData" text="Activity History">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="activityHistoryTable" prefHeight="441.0" prefWidth="681.0">
+                           <columns>
+                              <TableColumn fx:id="colActivityTitle" prefWidth="156.0" text="Title" />
+                              <TableColumn fx:id="colActivityOwner" prefWidth="179.0" text="Owner" />
+                              <TableColumn fx:id="colActivityStatus" prefWidth="124.0" text="Status" />
+                              <TableColumn fx:id="colActivityDate" minWidth="0.0" prefWidth="123.0" text="Request date" />
+                              <TableColumn fx:id="colActivityAction" prefWidth="98.0" text="Action" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="currentClientManagementTab" onSelectionChanged="#loadData" text="User Info">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="510.0">
+                     <children>
+                        <Button layoutX="283.0" layoutY="353.0" mnemonicParsing="false" onAction="#updateCurrentClient" text="Update" />
+                        <TextField fx:id="currentClientLoginField" layoutX="105.0" layoutY="40.0" />
+                        <TextField fx:id="currentClientNameField" layoutX="105.0" layoutY="148.0" />
+                        <TextField fx:id="currentClientSurnameField" layoutX="105.0" layoutY="199.0" />
+                        <DatePicker fx:id="currentClientBirthDate" layoutX="106.0" layoutY="247.0" prefHeight="25.0" prefWidth="155.0" />
+                        <TextField fx:id="currentClientAddressField" layoutX="106.0" layoutY="298.0" />
+                        <PasswordField fx:id="currentClientPasswordField" layoutX="105.0" layoutY="94.0" />
+                        <Text layoutX="105.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+                        <Text layoutX="105.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+                        <Text layoutX="103.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Birth Date" />
+                        <Text layoutX="106.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname" />
+                        <Text layoutX="105.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+                        <Text layoutX="104.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+                        <Text layoutX="296.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bio" />
+                        <TextArea fx:id="currentClientBioField" layoutX="296.0" layoutY="43.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="clientNotificationTab" onSelectionChanged="#loadData" text="Notifications">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="clientNotificationTable" prefHeight="436.0" prefWidth="681.0">
+                           <columns>
+                              <TableColumn fx:id="colNotificationInformation" prefWidth="316.0" text="Notification" />
+                              <TableColumn fx:id="colNotificationUser" prefWidth="181.0" text="User" />
+                              <TableColumn fx:id="colNotificationAction" prefWidth="97.0" text="Action" />
+                              <TableColumn fx:id="colChatAction" prefWidth="97.0" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="statisticsTab" onSelectionChanged="#loadData" text="Statistics">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="statisticChart" prefHeight="346.0" prefWidth="681.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Text layoutX="97.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total users" />
+                        <TextField fx:id="totalUsersField" editable="false" layoutX="47.0" layoutY="367.0" />
+                        <Text layoutX="265.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total borrowed publications" />
+                        <TextField fx:id="totalBorrowedPublicationField" editable="false" layoutX="261.0" layoutY="369.0" />
+                        <Text layoutX="489.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total sold publications" />
+                        <TextField fx:id="totalSoldPublicationField" editable="false" layoutX="470.0" layoutY="369.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
